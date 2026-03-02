@@ -1,15 +1,8 @@
 #ifndef AVL_H
 #define AVL_H
-
-/* ===================================================
- * avl.h
- * Declarações da Árvore AVL de Municípios
- * Chave de ordenação: nome (alfabético via strcmp)
- * =================================================== */
-
 #include "municipio.h"
 
-/* ----- Nó da árvore ----- */
+//Nó da árvore
 typedef struct NO {
     Municipio   dados;
     int         altura;
@@ -17,42 +10,42 @@ typedef struct NO {
     struct NO  *dir;
 } NO;
 
-/* Alias para ponteiro raiz (compatível com o enunciado) */
+//Alias para ponteiro raiz
 typedef NO Arv;
 
-/* ===================== Funções Básicas ===================== */
+//Funções Básicas
 
-/* Cria/inicializa uma árvore vazia (retorna NULL) */
+//Cria/inicializa uma árvore vazia (retorna NULL)
 Arv *criarArvore(void);
 
 /* Insere um município na AVL (ordenado pelo nome).
  * Retorna a nova raiz após possíveis rotações. */
 Arv *inserir(Arv *raiz, Municipio m);
 
-/* Percurso em ordem: lista municípios em ordem alfabética */
+//Percurso em ordem: lista municípios em ordem alfabética
 void emOrdem(Arv *raiz);
 
-/* Libera toda a memória alocada pela árvore */
+//Libera toda a memória alocada
 void liberarArvore(Arv *raiz);
 
-/* =================== Funcionalidades ======================= */
+//Funcionalidades
 
-/* i.  Conta o número total de municípios cadastrados */
+//i.  Conta o número total de municípios cadastrados
 int contarMunicipios(Arv *raiz);
 
-/* ii. Exibe municípios com população > X */
+//ii. Exibe municípios com população > X
 void mostrarPopulacaoMaiorQue(Arv *raiz, int X);
 
-/* iii. Exibe nome e densidade demográfica de cada cidade */
+//iii. Exibe nome e densidade demográfica de cada cidade
 void mostrarDensidade(Arv *raiz);
 
-/* iv. Soma das áreas e percentual em relação ao Brasil */
+//iv. Soma das áreas e percentual em relação ao Brasil
 void somatorioArea(Arv *raiz);
 
-/* v.  Exibe todas as cidades em ordem alfabética (dados completos) */
+//v.  Exibe todas as cidades em ordem alfabética (dados completos)
 void mostrarEmOrdemCompleto(Arv *raiz);
 
-/* vi. Retorna o município com maior população */
+//vi. Retorna o município com maior população
 Municipio cidadeMaiorPopulacao(Arv *raiz);
 
-#endif /* AVL_H */
+#endif
