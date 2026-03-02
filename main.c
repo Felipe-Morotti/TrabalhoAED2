@@ -10,10 +10,10 @@ static Municipio fazerMunicipio(const char *nome, float area, int populacao) {
     int i;
     //copia nome manualmente para evitar dependência de strncpy
     for (i = 0; i < 99 && nome[i] != '\0'; i++)
-        m.nome[i] = nome[i];
-        m.nome[i] = '\0';
-        m.area = area;
-        m.populacao = populacao;
+    m.nome[i] = nome[i];
+    m.nome[i] = '\0';
+    m.area = area;
+    m.populacao = populacao;
     return m;
 }
 
